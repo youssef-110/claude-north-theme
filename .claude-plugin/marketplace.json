@@ -1,0 +1,5 @@
+{
+  "name": "rryou-mods",
+  "owner": { "name": "rryou" },
+  "plugins": [{ "name": "the-north", "source": "./" }]
+}
