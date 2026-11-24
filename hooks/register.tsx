@@ -190,9 +190,9 @@ const FIELD = ridge(852, 12, 13, 0.7)
 /** A bat wing: the arm up to the wrist, four long fingers, and the membrane scalloped between them. */
 const DRAGON_WING = 'M-10 -6Q-18 -34 -30 -58L-40 -92Q-14 -72 0 -86Q12 -62 34 -68Q36 -46 56 -36Q36 -22 30 -6Z'
 
-/** A dragon, black against the sky, that crosses once every minute and a half with slow beats of its wings. */
+/** A great dragon, black against the sky, that crosses every 40 seconds with slow beats of its wings. */
 const DRAGON = (nowS: number): string =>
-  `<g class="dragon" style="${phase(nowS, 90)}"><g class="glide">` +
+  `<g class="dragon" style="${phase(nowS, 40)}"><g class="glide">` +
   // far wing, behind the body
   `<g class="flap2"><path transform="translate(14 2) scale(.72)" d="${DRAGON_WING}" fill="#0a0c11" stroke="#3e4a63" stroke-width="1.3" opacity=".8"/></g>` +
   // body: horned head, long neck, tucked legs, tail ending in a spade
@@ -741,8 +741,8 @@ const STYLE =
   '.breath{opacity:0;fill:#e8eef6;transform-box:fill-box;transform-origin:center;animation:breath 4.5s ease-out infinite}@keyframes breath{0%{opacity:0;transform:translate(0px,0px) scale(.6)}12%{opacity:.55}100%{opacity:0;transform:translate(26px,-14px) scale(3)}}' +
   '.wtail{transform-box:fill-box;transform-origin:0% 60%;animation:wtail 6s ease-in-out infinite}@keyframes wtail{0%,100%{transform:rotate(0deg)}50%{transform:rotate(-3deg)}}' +
   '.whead{transform-box:fill-box;transform-origin:20% 90%;animation:whead 12s ease-in-out infinite}@keyframes whead{0%,66%,100%{transform:rotate(0deg)}72%,86%{transform:rotate(-6deg)}}' +
-  '.dragon{opacity:0;animation:dragon 90s linear infinite}' +
-  '@keyframes dragon{0%{opacity:0;transform:translate(1800px,250px) scale(.85)}2%{opacity:.92}46%{opacity:.92;transform:translate(-220px,150px) scale(.85)}48%,100%{opacity:0;transform:translate(-220px,150px) scale(.85)}}' +
+  '.dragon{opacity:0;animation:dragon 40s linear infinite}' +
+  '@keyframes dragon{0%{opacity:0;transform:translate(1840px,270px) scale(1.5)}2%{opacity:.95}60%{opacity:.95;transform:translate(-340px,160px) scale(1.5)}62%,100%{opacity:0;transform:translate(-340px,160px) scale(1.5)}}' +
   '.glide{animation:glide 6s ease-in-out infinite}@keyframes glide{0%,100%{transform:translate(0px,0px)}50%{transform:translate(0px,-12px)}}' +
   '.flap,.flap2{transform-box:fill-box;transform-origin:70% 100%;animation:flap 2.6s ease-in-out infinite}.flap2{transform-origin:30% 100%}' +
   '@keyframes flap{0%,100%{transform:scaleY(1)}50%{transform:scaleY(-.35)}}' +
