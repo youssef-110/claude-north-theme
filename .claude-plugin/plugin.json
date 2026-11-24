@@ -1,7 +1,7 @@
 {
   "name": "the-north",
-  "version": "0.2.0",
-  "description": "A frozen northern night: a raven on an iron-banded sign reads out your context and cache, a cloaked swordsman and his white wolf beneath a red-leafed tree, a torch-lit castle before a great wall of ice, and a storm that thickens as the context fills.",
+  "version": "0.3.0",
+  "description": "A frozen northern night: a raven on an iron-banded sign reads out your context and cache, a cloaked swordsman and his white wolf that howls at the moon, a torch-lit castle before a great wall of ice, an ice king who comes out of the storm to stare, and a storm that thickens as the context fills.",
   "author": { "name": "rryou" },
   "license": "MIT",
   "types": "./types/index.d.ts"

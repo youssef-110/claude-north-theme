@@ -3,8 +3,9 @@
 A Claude Code desktop theme: a frozen northern night, drawn as original art.
 
 - A raven on an iron-banded sign shows how full the context window is, and an hourglass drains as the prompt cache runs out.
-- A swordsman in a black cloak and fur mantle stands with a white, red-eyed direwolf beneath a weeping red-leafed heart tree.
+- A swordsman in a black cloak and fur mantle stands with a white, red-eyed direwolf beneath a weeping red-leafed heart tree. Every so often the wolf lifts his head and howls at the moon.
 - A torch-lit castle flies grey-wolf banners before a great wall of ice; a dragon crosses the sky now and then.
+- Every two minutes an ice king comes out of the storm, walks up close, stares with burning blue eyes, and fades back into the snow.
 - The snowstorm thickens as the context fills.
 - Steel-and-ice colors, serif messages, and an optional ambience of wind, torches and a distant wolf, with a low horn when a reply finishes.
 

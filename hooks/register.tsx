@@ -329,7 +329,7 @@ const SWORDSMAN = (nowS: number): string =>
   '<g transform="translate(380 955)">' +
   // black cloak behind him, swept left by the wind
   '<g class="cloak"><path d="M-34 -246C-52 -200 -72 -110 -94 -18Q-72 -8 -52 -15Q-30 -5 -10 -13Q6 -7 22 -15L30 -120L34 -246Z" fill="url(#cloak)"/>' +
-  '<path d="M-26 -230Q-48 -140 -70 -20M-10 -220Q-24 -120 -34 -12M12 -200Q8 -110 6 -12" stroke="#2c3039" stroke-width="2" fill="none" opacity=".7"/>' +
+  '<path d="M-26 -230Q-48 -140 -70 -20M-10 -220Q-24 -120 -34 -12M12 -200Q8 -110 6 -12M-40 -170Q-56 -100 -82 -24" stroke="#2c3039" stroke-width="2" fill="none" opacity=".7"/>' +
   // moonlight along the cloak's right edge
   '<path d="M33 -240L29 -120L21 -17" stroke="#465066" stroke-width="2.5" stroke-linecap="round" fill="none" opacity=".85"/></g>' +
   // back leg and boot
@@ -337,79 +337,167 @@ const SWORDSMAN = (nowS: number): string =>
   '<path d="M-20 -64L-22 -5Q-22 0 -16 0L2 0Q4 -4 -3 -7L-4 -64Z" fill="#0b0b0d"/>' +
   // scabbard hanging back from the hip
   '<path d="M-4 -148L-56 -46" stroke="#2b221b" stroke-width="7" stroke-linecap="round"/>' +
-  '<path d="M-51 -56L-57 -44" stroke="#8d939c" stroke-width="7" stroke-linecap="round"/>' +
-  // quilted black jerkin
+  '<path d="M-51 -56L-57 -44M-14 -128L-18 -120" stroke="#8d939c" stroke-width="7" stroke-linecap="round"/>' +
+  // quilted black jerkin, a leather baldric across it
   '<path d="M-24 -230Q-29 -190 -23 -150L23 -150Q29 -190 25 -230Z" fill="#1c1916"/>' +
   '<path d="M-26 -212H26M-27 -196H27M-26 -180H26M-25 -166H25M0 -230V-150" stroke="#2c2722" stroke-width="1.4"/>' +
-  // front leg and boot
+  '<path d="M20 -228L-21 -158" stroke="#3a2a1c" stroke-width="4.5"/><path d="M19.5 -226L-20 -160" stroke="#5a4330" stroke-width="1"/>' +
+  // front leg and boot, buckled
   '<path d="M0 -152L6 -62L20 -62L18 -150Z" fill="#1b1c21"/>' +
   '<path d="M4 -64L6 -5Q6 0 12 0L31 0Q33 -4 25 -8L21 -64Z" fill="#0d0d10"/>' +
+  '<path d="M5 -40H22M-21 -40H-4" stroke="#3a2a1c" stroke-width="3"/>' +
   // fur at the boot tops
   '<path d="M-23 -66L-19 -58L-15 -64L-11 -57L-7 -64L-3 -58L-1 -66ZM3 -66L7 -58L11 -64L15 -57L19 -64L23 -66Z" fill="#3e3730"/>' +
   // belt and buckle
   '<rect x="-25" y="-157" width="50" height="9" rx="2" fill="#4a3424"/>' +
   '<rect x="2" y="-158.5" width="9" height="12" rx="1.5" fill="none" stroke="#b0b4ba" stroke-width="1.8"/>' +
-  // sword at the hip, his hand on the grip
+  // sword at the hip, his gloved hand on the grip
   '<path d="M0 -153L10 -173" stroke="#3b2a1e" stroke-width="5" stroke-linecap="round"/>' +
   '<path d="M-10.7 -158.4L10.7 -147.6" stroke="#9aa1ab" stroke-width="4" stroke-linecap="round"/>' +
-  '<circle cx="11.8" cy="-176.6" r="4.6" fill="#9aa1ab"/>' +
+  '<circle cx="11.8" cy="-176.6" r="4.6" fill="#9aa1ab"/><circle cx="10.8" cy="-177.6" r="1.6" fill="#d4d8de"/>' +
   '<path d="M10 -238Q31 -230 31 -196Q31 -178 22 -166L12 -167Q18 -181 16 -196Q14 -214 5 -224Z" fill="#191613"/>' +
+  '<path d="M30 -214Q31 -196 27 -178" stroke="#3c4252" stroke-width="2" fill="none"/>' +
   '<ellipse cx="13" cy="-165" rx="7.5" ry="6.5" fill="#0f0f11"/>' +
   // shaggy fur mantle over the shoulders
   '<path d="M-42 -224Q-47 -244 -32 -252Q-28 -266 -12 -262Q0 -272 14 -262Q30 -266 36 -252Q50 -246 45 -228Q49 -214 35 -214L28 -206L20 -214L10 -206L0 -214L-10 -206L-20 -214L-30 -206L-36 -214Q-49 -214 -42 -224Z" fill="#3e3730"/>' +
-  '<path d="M-36 -236Q-30 -246 -22 -242M-14 -250Q-6 -258 4 -252M14 -250Q24 -256 30 -246M34 -234Q42 -236 42 -226M-26 -222Q-18 -230 -10 -222M2 -224Q10 -232 18 -224" stroke="#75695c" stroke-width="2.2" stroke-linecap="round" fill="none"/>' +
+  '<path d="M-36 -236Q-30 -246 -22 -242M-14 -250Q-6 -258 4 -252M14 -250Q24 -256 30 -246M34 -234Q42 -236 42 -226M-26 -222Q-18 -230 -10 -222M2 -224Q10 -232 18 -224M-40 -226Q-36 -232 -30 -228" stroke="#75695c" stroke-width="2.2" stroke-linecap="round" fill="none"/>' +
   '<path d="M36 -248Q46 -240 44 -228M30 -222Q40 -220 42 -214" stroke="#958877" stroke-width="2" stroke-linecap="round" fill="none"/>' +
   // snow settled on his shoulders
   '<path d="M-38 -238Q-34 -250 -24 -250Q-18 -258 -8 -255Q2 -262 12 -256Q22 -260 30 -252Q40 -250 42 -242Q30 -246 20 -248Q6 -250 -8 -248Q-24 -246 -38 -238Z" fill="#edf2f8" opacity=".9"/>' +
-  // head: face toward the castle, short dark beard, dark curls to the shoulders
-  '<path d="M7 -287Q18 -289 22 -281L24 -276Q22 -273 25 -270L27.5 -266Q24.5 -265 24.5 -263Q22.5 -258 18 -256Q12 -254 7 -258Z" fill="#d2ab8b"/>' +
-  '<path d="M7 -259Q13 -254 19 -256Q23 -259 24.5 -263Q23 -255 18 -251Q10 -247 3 -253Z" fill="#1d1712"/>' +
-  '<path d="M23 -263.5L18 -263" stroke="#1d1712" stroke-width="1.6" stroke-linecap="round"/>' +
-  '<path d="M15 -276.5L20 -276" stroke="#2a1c14" stroke-width="1.5" stroke-linecap="round"/>' +
-  '<path d="M14 -280Q18 -281.5 22 -279.5" stroke="#1d1712" stroke-width="1.6" fill="none"/>' +
-  '<path d="M-14 -262Q-21 -287 -2 -297Q14 -303 24 -290Q27 -284 21 -282Q16 -285 11 -283Q8 -272 9 -262Q2 -255 -6 -256Z" fill="#15100d"/>' +
-  '<g fill="#15100d"><circle cx="-13" cy="-262" r="5"/><circle cx="-17" cy="-271" r="5"/><circle cx="-10" cy="-254" r="4.5"/>' +
-  '<circle cx="-4" cy="-292" r="5"/><circle cx="8" cy="-296" r="5"/><circle cx="18" cy="-292" r="4.5"/><circle cx="-12" cy="-284" r="4.5"/></g>' +
+  // head in profile toward the castle: dark curls with a knot at the back, a short full beard
+  '<path d="M-16 -258Q-26 -284 -8 -298Q6 -306 20 -298Q27 -292 24 -286Q18 -290 12 -288Q8 -280 9 -270Q8 -262 4 -256Q-6 -250 -16 -258Z" fill="#15100d"/>' +
+  '<path d="M6 -288Q14 -292 21 -286L23 -280Q21 -276 22 -274L26 -268L27.5 -265L24 -263.5L24 -261L22.5 -259L23 -257Q21 -252 17 -250Q10 -249 6 -255Z" fill="#d2ab8b"/>' +
+  '<path d="M14 -268Q17 -262 15 -257M8 -276Q10 -270 8 -264" stroke="#b48c6e" stroke-width="1.5" fill="none" opacity=".8"/>' +
+  '<path d="M6 -264Q8 -256 12 -252Q17 -248 22 -252Q24 -256 23 -258L21 -259Q18 -257 14 -258Q10 -260 8 -266Z" fill="#1d1611"/>' +
+  '<path d="M18 -262.5Q21 -263.8 24.3 -262Q21 -260.8 18 -261.5Z" fill="#1d1611"/>' +
+  '<path d="M15.5 -276Q18 -277.8 20.6 -276.2" stroke="#2a1c14" stroke-width="1.5" fill="none" stroke-linecap="round"/>' +
+  '<path d="M13 -279.6Q17 -281.8 22.6 -279.2" stroke="#1d1611" stroke-width="2.1" fill="none" stroke-linecap="round"/>' +
+  '<g fill="#15100d"><circle cx="-13" cy="-262" r="5"/><circle cx="-18" cy="-271" r="5"/><circle cx="-10" cy="-254" r="4.5"/><circle cx="-16" cy="-282" r="4.5"/>' +
+  '<circle cx="-4" cy="-294" r="5"/><circle cx="7" cy="-298" r="5"/><circle cx="17" cy="-293" r="4.5"/><circle cx="2" cy="-286" r="4"/><circle cx="-11" cy="-299" r="6"/></g>' +
+  '<path d="M-14 -296Q-8 -301 -3 -297M2 -300Q8 -303 13 -298M-20 -276Q-17 -281 -13 -279M-16 -262Q-13 -266 -9 -263M14 -294Q18 -296 21 -292" stroke="#3a2b21" stroke-width="1.3" fill="none" stroke-linecap="round"/>' +
+  '<path d="M-14 -300Q-6 -305 2 -302" stroke="#eef3f9" stroke-width="2" stroke-linecap="round" opacity=".7"/>' +
   // breath in the cold
-  [0, 1].map(i => `<circle cx="28" cy="-266" r="4" class="breath" style="${phase(nowS, 4.5, i * 2.2)}"/>`).join('') +
+  [0, 1].map(i => `<circle cx="28" cy="-262" r="4" class="breath" style="${phase(nowS, 4.5, i * 2.2)}"/>`).join('') +
   '</g>'
 
-/** A great white wolf with red eyes, sitting at the swordsman's side and looking where he looks. */
+/** A great white wolf with red eyes, sitting at the swordsman's side. Every so often he lifts his head and howls at the moon. */
 const WOLF = (nowS: number): string =>
   '<ellipse cx="226" cy="960" rx="98" ry="8" fill="#8c9bb4" opacity=".55"/>' +
   '<g class="breathe">' +
-  // back and body
+  // back and body, with a shaggy ridge of fur along the spine
   '<path d="M150 956Q142 906 168 880Q196 858 228 842Q250 828 266 812L304 806Q311 840 301 872Q293 900 289 940L289 956Z" fill="url(#fur)" stroke="#8e9aa8" stroke-width="1.3" stroke-linejoin="round"/>' +
-  '<path d="M176 872Q186 866 194 870M204 858Q214 852 222 858M234 846Q242 840 250 846M256 832Q262 826 268 830" stroke="#b8c2cd" stroke-width="1.5" fill="none" stroke-linecap="round"/>' +
+  '<path d="M158 894Q152 890 151 884M166 882Q160 877 160 871M178 871Q173 865 174 859M192 862Q188 856 190 850M206 853Q203 847 206 841M220 846Q218 840 221 834M234 838Q233 832 237 827M248 830Q248 824 252 820" stroke="#8e9aa8" stroke-width="1.3" fill="none" stroke-linecap="round"/>' +
+  '<path d="M176 872Q186 866 194 870M204 858Q214 852 222 858M234 846Q242 840 250 846M256 832Q262 826 268 830M186 890Q196 884 204 890M214 874Q224 868 232 874" stroke="#b8c2cd" stroke-width="1.5" fill="none" stroke-linecap="round"/>' +
   // far foreleg, in shade
   '<path d="M246 862L244 949Q244 957 252 957L263 957L260 866Z" fill="#b3bdc8" stroke="#8e9aa8" stroke-width="1"/>' +
   // haunch and hind paw
   '<path d="M158 932Q154 884 196 878Q236 880 240 918Q240 946 214 952Q178 958 158 932Z" fill="#f1f4f7" stroke="#8e9aa8" stroke-width="1.2"/>' +
-  '<path d="M172 912Q184 902 198 906M180 930Q192 920 206 926M206 896Q218 892 226 902" stroke="#b8c2cd" stroke-width="1.4" fill="none" stroke-linecap="round"/>' +
+  '<path d="M172 912Q184 902 198 906M180 930Q192 920 206 926M206 896Q218 892 226 902M166 922Q170 914 176 916" stroke="#b8c2cd" stroke-width="1.4" fill="none" stroke-linecap="round"/>' +
   '<path d="M206 958Q206 944 227 944Q246 944 250 958Z" fill="#eef1f4" stroke="#8e9aa8" stroke-width="1.1"/>' +
-  // near foreleg
+  // near foreleg, shaggy at the elbow
   '<path d="M266 862Q271 900 268 947Q268 957 279 957L294 957Q294 950 287 946L286 870Z" fill="url(#fur)" stroke="#8e9aa8" stroke-width="1.2"/>' +
+  '<path d="M268 880L262 888L270 890L264 898L272 898" stroke="#aeb9c5" stroke-width="1.1" fill="none"/>' +
   '<path d="M277 957V951M283 957V951M252 957V951M257 957V951M222 958V952M230 958V952" stroke="#8e9aa8" stroke-width="1"/>' +
-  // neck and the thick ruff of the chest
-  '<path d="M258 830Q258 792 276 768L314 776Q313 802 303 822Z" fill="url(#fur)" stroke="#8e9aa8" stroke-width="1.2"/>' +
+  // the thick ruff of the chest
   '<path d="M284 790L298 800L290 808L304 816L294 824L306 834L294 842L304 854L292 858L298 870L286 872Q278 836 280 796Z" fill="#f7f9fb" stroke="#aeb9c5" stroke-width="1.1" stroke-linejoin="round"/>' +
-  // head held high: ears up, long muzzle, red eye
-  '<g class="whead">' +
+  // neck and head: they lift together for the howl
+  `<g class="howl" style="${phase(nowS, 26)}">` +
+  '<path d="M258 830Q258 792 276 768L314 776Q313 802 303 822Z" fill="url(#fur)" stroke="#8e9aa8" stroke-width="1.2"/>' +
+  '<path d="M262 804L256 810L264 812L258 820M270 790L264 796L272 798" stroke="#aeb9c5" stroke-width="1.1" fill="none"/>' +
   '<path d="M280 755L283 726L295 748Z" fill="#dce2e8" stroke="#8e9aa8" stroke-width="1.1" stroke-linejoin="round"/>' +
+  // the open jaw, shown only while he howls
+  `<g class="hjaw" style="${phase(nowS, 26)}"><path d="M318 786L340 782L330 798Q320 800 312 794Z" fill="#3a2a2e"/>` +
+  '<path d="M314 794Q324 802 334 797L328 806Q316 806 310 798Z" fill="#eef1f4" stroke="#8e9aa8" stroke-width="1.1"/></g>' +
   '<path d="M276 770Q276 748 292 744Q306 742 316 754L338 775Q344 781 339 786L322 790Q308 796 292 790Q278 784 276 770Z" fill="#f6f8fa" stroke="#8e9aa8" stroke-width="1.2" stroke-linejoin="round"/>' +
   '<path d="M290 751L299 723L307 750Z" fill="#f2f5f8" stroke="#8e9aa8" stroke-width="1.1" stroke-linejoin="round"/>' +
   '<path d="M294 747L299 731L303 747Z" fill="#c9aeb0"/>' +
   '<path d="M280 778L275 790L284 790L280 801L290 796" stroke="#aeb9c5" stroke-width="1.2" fill="none" stroke-linejoin="round"/>' +
   '<path d="M302 761Q308 757 314 761" stroke="#8e9aa8" stroke-width="1.3" fill="none"/>' +
-  '<ellipse cx="308" cy="764.5" rx="3" ry="1.8" fill="#b3262d"/>' +
-  '<path d="M315 759Q325 765 333 773" stroke="#c9d1da" stroke-width="1.2" fill="none"/>' +
+  '<ellipse cx="308" cy="764.5" rx="3" ry="1.8" fill="#b3262d"/><circle cx="308.6" cy="764" r=".7" fill="#ffd4d4"/>' +
+  '<path d="M315 759Q325 765 333 773M318 768Q326 772 332 778" stroke="#c9d1da" stroke-width="1.2" fill="none"/>' +
   '<ellipse cx="339.5" cy="781" rx="3.2" ry="2.4" fill="#2a2d33"/>' +
   '<path d="M322 788L336 785" stroke="#8e9aa8" stroke-width="1.2"/>' +
+  [0, 1].map(i => `<circle cx="343" cy="782" r="3.5" class="breath" style="${phase(nowS, 4.5, 1.1 + i * 2.2)}"/>`).join('') +
   '</g></g>' +
   // tail curled round the front of the haunch
   '<g class="wtail"><path d="M152 948Q172 962 222 958Q248 956 256 944Q240 950 220 948Q186 944 164 930Z" fill="url(#fur)" stroke="#8e9aa8" stroke-width="1.2"/>' +
-  '<path d="M178 950Q196 954 214 952" stroke="#b8c2cd" stroke-width="1.3" fill="none"/></g>' +
-  [0, 1].map(i => `<circle cx="343" cy="782" r="3.5" class="breath" style="${phase(nowS, 4.5, 1.1 + i * 2.2)}"/>`).join('')
+  '<path d="M178 950Q196 954 214 952M166 940Q174 946 186 946" stroke="#b8c2cd" stroke-width="1.3" fill="none"/></g>'
+
+/** A shard of ice rising from the ice king's circlet. */
+const shard = (x: number, h: number): string => {
+  const base = n(-284 - 8 * (1 - (x / 23) ** 2))
+  const lean = n(x * 0.25)
+
+  return `M${n(x - 2.6)} ${base}L${n(x + lean)} ${n(base - h)}L${n(x + 2.6)} ${base}Z`
+}
+
+/** The ice king's breastplate: rows of overlapping scales. */
+const SCALES = (() => {
+  let d = ''
+
+  for (let row = 0; row < 8; row++) {
+    for (let x = -34; x <= 26; x += 10) {
+      d += `M${x + (row % 2) * 5} ${-206 + row * 10}q5 6 10 0`
+    }
+  }
+
+  return d
+})()
+
+/**
+ * The ice king, drawn round his feet, facing you. Every two minutes he comes out of the storm
+ * before the castle, walks up close, stares with burning blue eyes, then fades back into the snow.
+ */
+const ICE_KING = (nowS: number): string =>
+  `<g class="iceKing" style="${phase(nowS, 120)}"><g class="iceSway">` +
+  '<ellipse cx="0" cy="-180" rx="125" ry="175" fill="url(#iceAura)"/>' +
+  // tattered cape behind him
+  '<path d="M-58 -214Q-80 -150 -96 -8L-86 -14L-80 -2L-70 -12L-62 0L-52 -10L52 -10L62 0L70 -12L80 -2L86 -14L96 -8Q80 -150 58 -214Z" fill="#121820"/>' +
+  '<path d="M-62 -180Q-74 -110 -84 -20M62 -180Q74 -110 84 -20" stroke="#26303c" stroke-width="2" fill="none"/>' +
+  // legs in dark plate
+  '<path d="M-30 -112L-34 -6L-12 -6L-8 -112ZM8 -112L12 -6L34 -6L30 -112Z" fill="#1a2029"/>' +
+  '<path d="M-33 -66H-10V-57H-33ZM10 -66H33V-57H10Z" fill="#2b3440"/><path d="M-38 -6H-10V0H-38ZM10 -6H38V0H10Z" fill="#10151c"/>' +
+  // the ice sword, point down in his right hand
+  '<path d="M-63 -98L-53 -98L-56 -20L-60 -4L-62 -20Z" fill="url(#iceBlade)" stroke="#cfeaff" stroke-width=".8"/>' +
+  '<path d="M-58 -96V-18" stroke="#ffffff" stroke-width="1" opacity=".7"/>' +
+  '<path d="M-70 -100H-46" stroke="#9ec7e6" stroke-width="3" stroke-linecap="round"/>' +
+  // armoured skirt, breastplate and belt
+  '<path d="M-36 -124L36 -124L42 -84L28 -90L20 -80L10 -90L0 -80L-10 -90L-20 -80L-28 -90L-42 -84Z" fill="#1e252f" stroke="#3a4655" stroke-width="1"/>' +
+  '<path d="M-38 -214Q-44 -170 -36 -124L36 -124Q44 -170 38 -214Q0 -224 -38 -214Z" fill="url(#armor)"/>' +
+  `<path d="${SCALES}" stroke="#3d4a5a" stroke-width="1.1" fill="none" opacity=".75"/>` +
+  '<path d="M0 -220V-126" stroke="#3d4a5a" stroke-width="1.5"/><path d="M-37 -128H37" stroke="#0e1318" stroke-width="5"/>' +
+  // arms, bracers and clawed ice-blue hands
+  '<path d="M-52 -208Q-66 -170 -64 -116L-50 -116Q-50 -168 -38 -200ZM52 -208Q66 -170 64 -116L50 -116Q50 -168 38 -200Z" fill="#1a2029" stroke="#3a4655" stroke-width=".8"/>' +
+  '<path d="M-66 -132H-49V-122H-66ZM49 -132H66V-122H49Z" fill="#2b3440"/>' +
+  '<path d="M-66 -122Q-70 -108 -64 -98L-62 -92L-60 -100L-57 -91L-55 -100L-52 -94L-51 -104Q-48 -114 -50 -122Z' +
+  'M66 -122Q70 -108 64 -98L62 -92L60 -100L57 -91L55 -100L52 -94L51 -104Q48 -114 50 -122Z" fill="#9fbcd6" stroke="#6f8fae" stroke-width=".8"/>' +
+  // pauldrons rimed with frost
+  '<path d="M-60 -200Q-66 -222 -44 -228Q-30 -226 -26 -214Q-40 -206 -60 -200ZM60 -200Q66 -222 44 -228Q30 -226 26 -214Q40 -206 60 -200Z" fill="#232b36" stroke="#46546a" stroke-width="1"/>' +
+  '<path d="M-62 -190Q-60 -204 -46 -206L-40 -198Q-52 -196 -62 -190ZM62 -190Q60 -204 46 -206L40 -198Q52 -196 62 -190Z" fill="#2b3440" stroke="#46546a" stroke-width=".8"/>' +
+  '<path d="M-60 -203Q-62 -220 -44 -226M60 -203Q62 -220 44 -226" stroke="#cfe8f7" stroke-width="1.5" fill="none" opacity=".6"/>' +
+  // neck, and the long pale skull
+  '<path d="M-9 -232L-8 -212L8 -212L9 -232Z" fill="#7d9cbb"/><path d="M-4 -230L-3 -214M4 -230L3 -214" stroke="#5a7898" stroke-width="1.2"/>' +
+  '<path d="M0 -302Q22 -300 24 -276Q25 -264 20 -256Q18 -242 10 -234Q4 -228 0 -228Q-4 -228 -10 -234Q-18 -242 -20 -256Q-25 -264 -24 -276Q-22 -300 0 -302Z" fill="url(#iceSkin)"/>' +
+  '<path d="M-14 -296Q-10 -286 -12 -276M14 -296Q10 -286 12 -276M0 -302V-284M-21 -280Q-17 -274 -19 -268M21 -280Q17 -274 19 -268" stroke="#7393b2" stroke-width="1.2" fill="none" opacity=".75"/>' +
+  // brow, sunken sockets and burning eyes
+  '<path d="M-18 -268Q-10 -274 -3 -268M3 -268Q10 -274 18 -268" stroke="#4e6c8b" stroke-width="2.4" fill="none" stroke-linecap="round"/>' +
+  '<path d="M-16 -264Q-10 -270 -4 -264Q-10 -259 -16 -264ZM4 -264Q10 -270 16 -264Q10 -259 4 -264Z" fill="#24384f"/>' +
+  '<g class="iceEyes"><circle cx="-10" cy="-264" r="10" fill="url(#eyeGlow)"/><circle cx="10" cy="-264" r="10" fill="url(#eyeGlow)"/>' +
+  '<ellipse cx="-10" cy="-264" rx="3.8" ry="2.1" fill="#7feaff"/><ellipse cx="10" cy="-264" rx="3.8" ry="2.1" fill="#7feaff"/>' +
+  '<circle cx="-10" cy="-264" r="1.1" fill="#ffffff"/><circle cx="10" cy="-264" r="1.1" fill="#ffffff"/></g>' +
+  // nose, hollow cheeks and a thin hard mouth
+  '<path d="M0 -262Q-1 -254 -2 -248M-3 -248Q0 -246 3 -248M-17 -254Q-12 -246 -11 -238M17 -254Q12 -246 11 -238" stroke="#5a7a9a" stroke-width="1.4" fill="none" stroke-linecap="round"/>' +
+  '<path d="M-6 -239Q0 -241 6 -239" stroke="#2f4560" stroke-width="1.8" fill="none" stroke-linecap="round"/>' +
+  // a crown of ice shards on a frosted circlet
+  '<path d="M-23 -284Q0 -293 23 -284" stroke="#a8cbe6" stroke-width="3" fill="none"/>' +
+  `<path d="${[[-20, 14], [-13, 22], [-6, 28], [0, 34], [6, 28], [13, 22], [20, 14]].map(([x, h]) => shard(x ?? 0, h ?? 0)).join('')}" fill="#dff3ff" stroke="#8fb8d8" stroke-width=".8" stroke-linejoin="round"/>` +
+  // breath like frost, and a glitter of ice about him
+  [0, 1].map(i => `<circle cx="0" cy="-238" r="3.5" class="ibreath" style="${phase(nowS, 5, i * 2.5)}"/>`).join('') +
+  '<g fill="#dff6ff">' +
+  [[-90, -250], [84, -230], [-70, -120], [96, -140], [-40, -300], [50, -310]]
+    .map(([x, y], i) => `<path class="tw" style="animation-duration:${3 + i}s" d="M${x} ${(y ?? 0) - 4}L${(x ?? 0) + 1} ${(y ?? 0) - 1}L${(x ?? 0) + 4} ${y}L${(x ?? 0) + 1} ${(y ?? 0) + 1}L${x} ${(y ?? 0) + 4}L${(x ?? 0) - 1} ${(y ?? 0) + 1}L${(x ?? 0) - 4} ${y}L${(x ?? 0) - 1} ${(y ?? 0) - 1}Z"/>`)
+    .join('') +
+  '</g></g></g>'
 
 const RAVEN =
   '<g class="bob">' +
@@ -650,6 +738,7 @@ const right = (nowS: number): string =>
   pine(470, 940, 210, '#111a2a', '#aab8cf') +
   CASTLE(nowS) +
   RIGHT_GROUND +
+  ICE_KING(nowS) +
   '</svg>'
 
 // ---------------------------------------------------------------- the storm (1600 by 1000, tilted by the wind)
@@ -660,10 +749,11 @@ const snowLayer = (seed: number, count: number, r0: number, r1: number, fall: nu
   let out = ''
 
   for (let i = 0; i < count; i++) {
-    const x = n(rand() * 1600)
-    const y = n(rand() * 1000)
+    // whole numbers keep a heavy storm inside the scene's size limit
+    const x = Math.round(rand() * 1600)
+    const y = Math.round(rand() * 1000)
     const r = n(r0 + rand() * (r1 - r0))
-    out += `<circle cx="${x}" cy="${y}" r="${r}"/><circle cx="${x}" cy="${n(y - 1000)}" r="${r}"/>`
+    out += `<circle cx="${x}" cy="${y}" r="${r}"/><circle cx="${x}" cy="${y - 1000}" r="${r}"/>`
   }
 
   return (
@@ -719,6 +809,11 @@ const DEFS =
   glow('torchGlow', '#ffb85c', 0.55) +
   glow('hallGlow', '#ffc96b', 0.28) +
   glow('flake', '#ffffff', 1) +
+  glow('iceAura', '#7fd6ff', 0.22) +
+  glow('eyeGlow', '#6fe4ff', 0.95) +
+  '<radialGradient id="iceSkin" cx=".5" cy=".35" r=".7"><stop offset="0" stop-color="#d9eaf7"/><stop offset=".55" stop-color="#9ab8d4"/><stop offset="1" stop-color="#5f7f9f"/></radialGradient>' +
+  '<linearGradient id="armor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c3542"/><stop offset="1" stop-color="#161c24"/></linearGradient>' +
+  '<linearGradient id="iceBlade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#8fc3e6"/><stop offset=".5" stop-color="#eef9ff"/><stop offset="1" stop-color="#9fcbe8"/></linearGradient>' +
   '</defs>'
 
 const STYLE =
@@ -740,7 +835,18 @@ const STYLE =
   '.cloak{transform-box:fill-box;transform-origin:50% 0%;animation:cloak 3.4s ease-in-out infinite}@keyframes cloak{0%,100%{transform:skewX(-2deg)}50%{transform:skewX(3deg)}}' +
   '.breath{opacity:0;fill:#e8eef6;transform-box:fill-box;transform-origin:center;animation:breath 4.5s ease-out infinite}@keyframes breath{0%{opacity:0;transform:translate(0px,0px) scale(.6)}12%{opacity:.55}100%{opacity:0;transform:translate(26px,-14px) scale(3)}}' +
   '.wtail{transform-box:fill-box;transform-origin:0% 60%;animation:wtail 6s ease-in-out infinite}@keyframes wtail{0%,100%{transform:rotate(0deg)}50%{transform:rotate(-3deg)}}' +
-  '.whead{transform-box:fill-box;transform-origin:20% 90%;animation:whead 12s ease-in-out infinite}@keyframes whead{0%,66%,100%{transform:rotate(0deg)}72%,86%{transform:rotate(-6deg)}}' +
+  // the wolf's howl: neck and head tip back toward the moon, the jaw opens, then all settles
+  '.howl{transform-box:view-box;transform-origin:270px 832px;animation:howl 26s ease-in-out infinite}' +
+  '@keyframes howl{0%,66%{transform:rotate(0deg)}71%{transform:rotate(-34deg)}78%{transform:rotate(-37deg)}86%{transform:rotate(-34deg)}91%,100%{transform:rotate(0deg)}}' +
+  '.hjaw{opacity:0;animation:hjaw 26s ease-in-out infinite}@keyframes hjaw{0%,70%,90%,100%{opacity:0}73%,87%{opacity:1}}' +
+  // the ice king: out of the storm, close, a long stare, gone
+  '.iceKing{opacity:0;transform-box:view-box;transform-origin:0px 0px;animation:iceKing 120s infinite}' +
+  '@keyframes iceKing{0%{opacity:0;transform:translate(262px,926px) scale(.3)}2%{opacity:.9}5%{transform:translate(258px,958px) scale(.7)}' +
+  '8%{transform:translate(254px,990px) scale(1.15)}11%{transform:translate(251px,1018px) scale(1.6)}14%{opacity:1;transform:translate(250px,1040px) scale(1.95)}' +
+  '33%{opacity:1;transform:translate(250px,1040px) scale(1.95)}38%,100%{opacity:0;transform:translate(250px,1040px) scale(1.95)}}' +
+  '.iceSway{transform-box:fill-box;transform-origin:50% 100%;animation:iceSway 7s ease-in-out infinite}@keyframes iceSway{0%,100%{transform:rotate(-1deg)}50%{transform:rotate(1deg)}}' +
+  '.iceEyes{animation:iceEyes 2.6s ease-in-out infinite}@keyframes iceEyes{0%,100%{opacity:.65}50%{opacity:1}}' +
+  '.ibreath{opacity:0;fill:#cfeaff;transform-box:fill-box;transform-origin:center;animation:ibreath 5s ease-out infinite}@keyframes ibreath{0%{opacity:0;transform:translate(0px,0px) scale(.6)}15%{opacity:.5}100%{opacity:0;transform:translate(0px,-18px) scale(3.2)}}' +
   '.dragon{opacity:0;animation:dragon 40s linear infinite}' +
   '@keyframes dragon{0%{opacity:0;transform:translate(1840px,270px) scale(1.5)}2%{opacity:.95}60%{opacity:.95;transform:translate(-340px,160px) scale(1.5)}62%,100%{opacity:0;transform:translate(-340px,160px) scale(1.5)}}' +
   '.glide{animation:glide 6s ease-in-out infinite}@keyframes glide{0%,100%{transform:translate(0px,0px)}50%{transform:translate(0px,-12px)}}' +
