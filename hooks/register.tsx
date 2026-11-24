@@ -944,6 +944,9 @@ const LOOK: ThemeSetArgs = { ...BASE, sound: SOUND, style: STYLE_RULES }
 
 // ---------------------------------------------------------------- hooks
 
+/** Whether a window has drawn this session's theme since the mod loaded. */
+let themeDrawn = false
+
 /** Sets the whole look; a build that refuses sound or style gets the look without them. */
 const applyTheme = async ($: EngineInterface): Promise<void> => {
   let set
@@ -955,12 +958,16 @@ const applyTheme = async ($: EngineInterface): Promise<void> => {
     set = await $.theme.set(BASE)
   }
 
+  themeDrawn = set.isDrawn
   // A status line only while nothing draws it, cleared once a window does.
   $.ui.status(set.isDrawn ? undefined : set.reason)
 }
 
 export const register: Register = on => {
   on('session.start', async ($, e, next) => {
+    // The look first, before anything else, so it shows as soon as it can.
+    await applyTheme($)
+
     const unpainted = problems.find(line => line.startsWith("Desktop won't paint"))
 
     if (unpainted !== undefined) {
@@ -974,17 +981,16 @@ export const register: Register = on => {
       // No figures yet: the sign reads 0%.
     }
 
-    await applyTheme($)
-
     return next(e)
   })
 
   // The desktop app starts sessions ahead of time and opens background ones later, so the
-  // theme set at session.start can predate any window: set it again whenever one attaches.
+  // theme set at session.start can predate any window: set it again when one attaches and
+  // nothing has drawn it yet. Once drawn, switching back to the session sets nothing.
   on('session.attach', async ($, e, next) => {
     const result = await next(e)
 
-    if (e.surface === 'desktop' || e.surface === 'mobile') {
+    if ((e.surface === 'desktop' || e.surface === 'mobile') && !themeDrawn) {
       await applyTheme($)
     }
 
@@ -1023,9 +1029,8 @@ export const register: Register = on => {
     }
 
     const { Svg } = $.ui.resolve(e)
-    const percent = await read($, fill)
-    const cached = await read($, cache)
-    const now = await $.clock.now()
+    // the three reads at once, so the first drawing waits on one round trip, not three
+    const [percent, cached, now] = await Promise.all([read($, fill), read($, cache), $.clock.now()])
 
     return (
       <Svg
