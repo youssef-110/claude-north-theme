@@ -1,5 +1,5 @@
 import { atom, read, update } from 'claude-code'
-import type { Register, SessionContextUsage, ThemeSetArgs, ThemeSound, ThemeStyle } from 'claude-code'
+import type { EngineInterface, Register, SessionContextUsage, ThemeSetArgs, ThemeSound, ThemeStyle } from 'claude-code'
 
 import type { TheNorthCache } from '../types'
 import { makeColors } from './make-colors.js'
@@ -895,7 +895,7 @@ const SOUND: ThemeSound = {
       // torches at the gate, off to the right
       { wave: 'crackle', scatter: 2, gain: 0.04, attack: 0.002, release: 0.05, pan: 0.55, filter: { type: 'lowpass', hz: 2600 } },
       // now and then, a wolf far off
-      { wave: 'sine', notes: ['E4', 'B4'], step: 1.4, glide: 6, scatter: 0.015, gain: 0.025, attack: 0.5, release: 2.2, pan: -0.6, tremolo: { hz: 5, depth: 0.15 } },
+      { wave: 'sine', notes: ['E4', 'B4'], step: 1.4, glide: 6, scatter: 0.02, gain: 0.025, attack: 0.5, release: 1.9, pan: -0.6, tremolo: { hz: 5, depth: 0.15 } },
     ],
   },
   cues: {
@@ -944,6 +944,21 @@ const LOOK: ThemeSetArgs = { ...BASE, sound: SOUND, style: STYLE_RULES }
 
 // ---------------------------------------------------------------- hooks
 
+/** Sets the whole look; a build that refuses sound or style gets the look without them. */
+const applyTheme = async ($: EngineInterface): Promise<void> => {
+  let set
+
+  try {
+    set = await $.theme.set(LOOK)
+  } catch (error) {
+    $.ui.log(`the-north: ${String(error)}`)
+    set = await $.theme.set(BASE)
+  }
+
+  // A status line only while nothing draws it, cleared once a window does.
+  $.ui.status(set.isDrawn ? undefined : set.reason)
+}
+
 export const register: Register = on => {
   on('session.start', async ($, e, next) => {
     const unpainted = problems.find(line => line.startsWith("Desktop won't paint"))
@@ -959,21 +974,21 @@ export const register: Register = on => {
       // No figures yet: the sign reads 0%.
     }
 
-    let set
-
-    try {
-      set = await $.theme.set(LOOK)
-    } catch (error) {
-      // An older build refuses sound or style; set the look without them.
-      $.ui.log(`the-north: ${String(error)}`)
-      set = await $.theme.set(BASE)
-    }
-
-    if (!set.isDrawn) {
-      $.ui.status(set.reason)
-    }
+    await applyTheme($)
 
     return next(e)
+  })
+
+  // The desktop app starts sessions ahead of time and opens background ones later, so the
+  // theme set at session.start can predate any window: set it again whenever one attaches.
+  on('session.attach', async ($, e, next) => {
+    const result = await next(e)
+
+    if (e.surface === 'desktop' || e.surface === 'mobile') {
+      await applyTheme($)
+    }
+
+    return result
   })
 
   on('session.measure', async ($, e, next) => {

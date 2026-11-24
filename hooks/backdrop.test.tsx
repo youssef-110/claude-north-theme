@@ -80,6 +80,32 @@ test('a subagent turn leaves the cache alone', async ($, on) => {
   expect((await drawn($, 'desktop')).source).toContain('>—</text>')
 })
 
+test('the whole look, sound and style included, is set again when a desktop window attaches', async ($, on) => {
+  const sets: any[] = []
+
+  on('session.start', (_, e) => ({ cwd: e.cwd }))
+  on('session.usage', () => ({ value: { startedAt: 0, context: { window: 200000 }, rateLimits: [] } }))
+  on('theme.set', (_, e: any) => {
+    sets.push(e)
+
+    return { value: sets.length === 1 ? { isDrawn: false, reason: 'no window yet' } : { isDrawn: true, requestId: 'backdrop' } }
+  })
+  on('session.attach', (_, e) => ({ clientId: e.clientId }))
+  const logs: string[] = []
+  on('ui.log', (_, e: any) => (logs.push(JSON.stringify(e)), { value: undefined }))
+  on('ui.status', () => ({ value: undefined }))
+
+  await $.session.start({ cwd: '/', surface: 'desktop', isInteractive: true })
+  await $.session.attach({ surface: 'desktop', clientId: 'desktop:default' })
+
+  // no fallback: the look is taken whole
+  expect(logs).toEqual([])
+  expect(sets.length).toBe(2)
+  const look = sets[1].attributes ?? sets[1]
+  expect(look.sound).toBeDefined()
+  expect(look.style).toBeDefined()
+})
+
 test('the terminal gets the engine own backdrop', async ($, on) => {
   on('ui.render', ($, e) => {
     const { Text } = $.ui.resolve(e)
